@@ -1,4 +1,7 @@
-﻿<style>
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
 #atas .widget-content {position: relative;}
 h3.lts {clear: both;padding: 7px 0;font-size: 17px;line-height: 20px;margin-bottom: 10px;color: #d71149;overflow: hidden;padding-left: 5px;text-transform: uppercase;border-bottom: 3px solid #d71149;}
 .caroul-title{background:#333;color:#FFF;border-bottom:3px solid #d71149;font-size:12pt;margin:0;margin-top:2px;padding:8px;border-radius:0 0 25px 0}
@@ -32,12 +35,12 @@ h3.lts {clear: both;padding: 7px 0;font-size: 17px;line-height: 20px;margin-bott
 .flexslider .idate div{width:18px;line-height:1.6em;text-align:center}
 .flexslider .idate:after{content:' ';position:absolute;z-index:-9999px;width:0;height:0;left:25px;top:-1px;border-width:4px 6px;border-style:solid;border-color:transparent transparent rgb(125,208,4)  rgb(125,208,4)}
 </style>
-<script>
-document.write("<link href=\'https:\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.3.0\/css\/font-awesome.min.css\' rel=\'stylesheet\'\/>");
-document.write("<script src=\'https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/2.1.4\/jquery.min.js\'><\/script>");
-document.write("<link href=\'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/flexslider\/2.6.1\/flexslider.min.css\'/>");
-document.write("<script src=\'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/flexslider\/2.6.1\/jquery.flexslider.min.js\'><\/script>");
-</script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.1/flexslider.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.1/jquery.flexslider.min.js"></script>
+</head>
+<body>
 <script type="text/javascript"> 
   $(window).load(function() { 
     $('#mbt-c').flexslider({ 
@@ -133,7 +136,7 @@ ListImage =  json.feed.entry[i].content.$t.match(/src=(.+?[\.jpg|\.gif|\.png]")/
 } 
 else 
 { 
-ListImage= "'http://4.bp.blogspot.com/-HALLtgFeep0/VfryhQ0C5oI/AAAAAAAAPcY/77mSGND4q84/s200/Icon.png'"; 
+ListImage= "'https://4.bp.blogspot.com/-HALLtgFeep0/VfryhQ0C5oI/AAAAAAAAPcY/77mSGND4q84/s200/Icon.png'"; 
 } 
 //###################  Printing List 
 var listing = "<li><div class='flex-div'><div class='iFeatured'><a  href=" 
@@ -159,4 +162,6 @@ document.write(listing);
 document.write("<script src='"+ListBlogLink+"/feeds/posts/default/-/"+ListLabel+"?alt=json-in-script&callback=mbtcarousel'></"+"script>"); 
 document.write("<script type=\'text\/javascript\'>\/\/<![CDATA[\r\n$(document).ready(function() {$(\'#mbt-c .iFeatured img\').attr(\'src\', function(i, src) \r\n{return src.replace( \'s150\', \'s300\' );});});\r\n\/\/]]><\/script>");
 </script> 
-</ul></div>
+</ul></div>
+</body>
+</html>
