@@ -1,10 +1,4 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Slider Post</title>
-<meta content='width=device-width, initial-scale=1' name='viewport'>
-<style>
+﻿<style>
 #atas .widget-content {position: relative;}
 h3.lts {clear: both;padding: 7px 0;font-size: 17px;line-height: 20px;margin-bottom: 10px;color: #d71149;overflow: hidden;padding-left: 5px;text-transform: uppercase;border-bottom: 3px solid #d71149;}
 .caroul-title{background:#333;color:#FFF;border-bottom:3px solid #d71149;font-size:12pt;margin:0;margin-top:2px;padding:8px;border-radius:0 0 25px 0}
@@ -43,32 +37,7 @@ document.write("<link href=\'https:\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.
 document.write("<script src=\'https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/2.1.4\/jquery.min.js\'><\/script>");
 document.write("<link href=\'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/flexslider\/2.6.1\/flexslider.min.css\'/>");
 document.write("<script src=\'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/flexslider\/2.6.1\/jquery.flexslider.min.js\'><\/script>");
-</script>
-</head>
-<body>
-<script>
-window.addEventListener('message', receiveMessage, false);
-function receiveMessage(event) {
-	if (event.data) {
-		var msg;
-		try {
-			msg = JSON.parse(event.data);
-		} catch (err) {
-			// Do nothing
-		}
-		if (!msg)
-			return false;
-
-		if (msg.name === 'resize') {
-			window.parent.postMessage({
-			  sentinel: 'amp',
-			  type: 'embed-size',
-			  height: msg.data.height
-			}, '*');
-		}
-	}
-}
-</script>
+</script>
 <script type="text/javascript"> 
   $(window).load(function() { 
     $('#mbt-c').flexslider({ 
@@ -190,6 +159,4 @@ document.write(listing);
 document.write("<script src='"+ListBlogLink+"/feeds/posts/default/-/"+ListLabel+"?alt=json-in-script&callback=mbtcarousel'></"+"script>"); 
 document.write("<script type=\'text\/javascript\'>\/\/<![CDATA[\r\n$(document).ready(function() {$(\'#mbt-c .iFeatured img\').attr(\'src\', function(i, src) \r\n{return src.replace( \'s150\', \'s300\' );});});\r\n\/\/]]><\/script>");
 </script> 
-</ul></div>
-</body>
-</html>
+</ul></div>
