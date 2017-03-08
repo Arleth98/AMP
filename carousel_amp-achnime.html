@@ -44,6 +44,21 @@ h3.lts {clear: both;padding: 7px 0;font-size: 17px;line-height: 20px;margin-bott
 </style>
 </head>
 <body>
+<script>
+window.addEventListener('message', function(event) {
+  const listener = function(event) {
+    if (event.source != window.parent ||
+        event.origin != window.context.location.origin ||
+        !event.data ||
+        event.data.sentinel != 'amp' ||
+        event.data.type != 'intersection') {
+      return;
+    }
+    event.data.changes.forEach(function (change) {
+      console.log(change);
+    });
+});
+</script>
 <script type="text/javascript"> 
   $(window).load(function() { 
     $('#mbt-c').flexslider({ 
