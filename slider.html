@@ -1,0 +1,54 @@
+﻿<style>
+#carousel{height:190px;margin-bottom:0px;position:relative;display:block}
+#carousel .container{position:absolute;left:0;width:1060px!important;height:190px;overflow:hidden;}
+#carousel #previous_button:before {content:&#39;\f104&#39;;font-family:Fontawesome;z-index: 9999;padding: 10px;color: #FFF;background: #333;}
+#carousel #previous_button{position:absolute;z-index:100;cursor:pointer;bottom:80px;}
+#carousel #next_button:before {content: &#39;\f105&#39;;font-family: Fontawesome;z-index: 9999;padding: 10px;color: #FFF;background: #333;}
+#carousel #next_button{position:absolute;right:0;z-index:100;cursor:pointer;bottom:80px;}
+#carousel ul{width:3000px;position:relative;margin-top:10px;list-style: none; margin: 0;}
+#carousel ul li{display:inline;float:left;text-align:center;font-weight:700;line-height:normal;width:140px;height:190px;margin:5px;padding:0;}
+#carousel ul li:hover{filter:alpha(opacity=75);opacity:.75;}
+#carousel ul li a.slider_title{color:#fff;}
+#carousel a img{display:block;background:#fff;margin-top:0}
+.thumb {position: relative;}
+.thumb p {background:rgba(27,62,144,0.70);position:absolute;width:100%;margin:0;bottom:5px;padding:5px 0;text-align:center;}
+@media only screen and (max-width:640px){#carousel{display:none;}}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='https://cdn.rawgit.com/Arleth98/Js/master/slider-auto-index.js' type='text/javascript'/>
+<script type='text/javascript'>
+//<![CDATA[
+imgr=new Array();imgr[0]="http://2.bp.blogspot.com/-uitX7ROPtTU/Tyv-G4NA_uI/AAAAAAAAFBY/NcWLPVnYEnU/s1600/no+image.jpg";showRandomImg=true;aBold=true;summaryPost=140;summaryTitle=25;numposts1=12;label1="news";function removeHtmlTag(f,e){var h=f.split("<");for(var g=0;g<h.length;g++){if(h[g].indexOf(">")!=-1){h[g]=h[g].substring(h[g].indexOf(">")+1,h[g].length)}}h=h.join("");h=h.substring(0,e-1);return h}function showrecentposts(z){j=(showRandomImg)?Math.floor((imgr.length+1)*Math.random()):0;img=new Array();document.write("<ul>");for(var o=0;o<numposts1;o++){var w=z.feed.entry[o];var g=w.title.$t;var f;var p;if(o==z.feed.entry.length){break}for(var l=0;l<w.link.length;l++){if(w.link[l].rel=="alternate"){p=w.link[l].href;break}}for(var l=0;l<w.link.length;l++){if(w.link[l].rel=="replies"&&w.link[l].type=="text/html"){f=w.link[l].title.split(" ")[0];break}}if("content" in w){var r=w.content.$t}else{if("summary" in w){var r=w.summary.$t}else{var r=""}}postdate=w.published.$t;if(j>imgr.length-1){j=0}img[o]=imgr[j];s=r;a=s.indexOf("<img");b=s.indexOf('src="',a);c=s.indexOf('"',b+5);d=s.substr(b+5,c-b-5);if((a!=-1)&&(b!=-1)&&(c!=-1)&&(d!="")){img[o]=d}var q=[1,2,3,4,5,6,7,8,9,10,11,12];var x=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];var u=postdate.split("-")[2].substring(0,2);var h=postdate.split("-")[1];var t=postdate.split("-")[0];for(var e=0;e<q.length;e++){if(parseInt(h)==q[e]){h=x[e];break}}var n=u+" "+h+" "+t;var v='<li class="wraps"><div class="thumb"><a href="'+p+'"><img class="anim" src="'+img[o]+'"/></a><p><a class="slider_title" href="'+p+'">'+g+"</a></p></div></li>";document.write(v);j++}document.write("</ul>")};
+//]]>
+</script>
+<div id='carousel'>
+<div id='previous_button'/>
+<div class='container'>
+<script>
+document.write(&quot;&lt;script src=\&quot;https://iahime.blogspot.co.id/feeds/posts/default?max-results=&quot;+numposts1+&quot;&amp;orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts\&quot;&gt;&lt;\/script&gt;&quot;);
+</script>    
+<div class='clear'/>
+</div>
+<div id='next_button'/>
+</div>
+<script type='text/javascript'>
+(function($) {     $(document).ready(function(){
+$(&quot;#carousel .container&quot;).jCarouselLite({
+    auto:4000,
+    scroll: 1,
+    speed: 800,    
+    visible: 5,
+    start: 0,
+    circular: true,
+    btnPrev: &quot;#previous_button&quot;,
+    btnNext: &quot;#next_button&quot;
+    });
+    })})(jQuery)    
+</script>
+
+<script type='text/javascript'>
+//<![CDATA[
+//Slider Thumb
+$('#carousel a img').each(function(){$(this).attr('src',$(this).attr('src').replace(/\/s[0-9]+(\-c)?\//,'/w140-h190-c/'))});
+//]]>
+</script>
