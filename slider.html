@@ -42,9 +42,7 @@ imgr=new Array();imgr[0]="http://2.bp.blogspot.com/-uitX7ROPtTU/Tyv-G4NA_uI/AAAA
 <div id='carousel'>
 <div id='previous_button'></div>
 <div class='container'>
-<script>
-document.write("<script src=\'https://iahime.blogspot.co.id/feeds/posts/default?max-results=12&amp;orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts\'><\/script>");
-</script>    
+<script src='https://iahime.blogspot.co.id/feeds/posts/default?max-results=12&amp;orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts'/>
 </div>
 <div id='next_button'></div>
 </div>
@@ -62,7 +60,6 @@ $("#carousel .container").jCarouselLite({
     });
     })})(jQuery)    
 </script>
-
 <script type='text/javascript'>
 //<![CDATA[
 $('#carousel a img').each(function(){$(this).attr('src',$(this).attr('src').replace(/\/s[0-9]+(\-c)?\//,'/w140-h190-c/'))});
